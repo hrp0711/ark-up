@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Ark-Up EdTech Theme - Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Primary: Azul Confianza */
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary: Verde Crecimiento */
+    --secondary: 158 64% 47%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent: Amarillo Energía */
+    --accent: 45 93% 55%;
+    --accent-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Destructive: Rojo Alerta */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --radius: 0.75rem;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 221 83% 53%;
+    
+    /* Custom Ark-Up Colors */
+    --ark-blue: 221 83% 53%;
+    --ark-green: 158 64% 47%;
+    --ark-yellow: 45 93% 55%;
+    --ark-orange: 24 95% 53%;
+    --ark-purple: 262 83% 58%;
+    --ark-navy: 222 47% 11%;
+    --ark-gray: 215 16% 47%;
+    --ark-light: 210 40% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  /* Ark-Up Component Utilities */
+  .ark-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .ark-section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .ark-gradient-blue {
+    background: linear-gradient(135deg, hsl(var(--ark-blue)) 0%, hsl(221 70% 45%) 100%);
+  }
+  
+  .ark-gradient-green {
+    background: linear-gradient(135deg, hsl(var(--ark-green)) 0%, hsl(158 60% 38%) 100%);
+  }
+  
+  .ark-gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--ark-blue)) 0%, hsl(262 70% 55%) 50%, hsl(var(--ark-green)) 100%);
+  }
+  
+  .ark-card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .ark-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .ark-button-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--ark-blue)) 0%, hsl(221 70% 45%) 100%);
+  }
+  
+  .ark-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px hsl(var(--ark-blue) / 0.5);
+  }
+  
+  .ark-button-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--ark-green)) 0%, hsl(158 60% 38%) 100%);
+  }
+  
+  .ark-button-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px hsl(var(--ark-green) / 0.5);
+  }
+  
+  .ark-button-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold border-2 transition-all duration-300;
+    border-color: hsl(var(--ark-blue));
+    color: hsl(var(--ark-blue));
+  }
+  
+  .ark-button-outline:hover {
+    @apply text-white;
+    background: hsl(var(--ark-blue));
+    transform: translateY(-2px);
+  }
+  
+  .ark-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .ark-badge-blue {
+    @apply ark-badge;
+    background: hsl(var(--ark-blue) / 0.1);
+    color: hsl(var(--ark-blue));
+  }
+  
+  .ark-badge-green {
+    @apply ark-badge;
+    background: hsl(var(--ark-green) / 0.1);
+    color: hsl(var(--ark-green));
+  }
+  
+  .ark-badge-yellow {
+    @apply ark-badge;
+    background: hsl(var(--ark-yellow) / 0.15);
+    color: hsl(35 90% 40%);
+  }
+  
+  /* Animation Utilities */
+  .ark-fade-in {
+    animation: arkFadeIn 0.6s ease-out forwards;
+  }
+  
+  .ark-slide-up {
+    animation: arkSlideUp 0.6s ease-out forwards;
+  }
+  
+  .ark-scale-in {
+    animation: arkScaleIn 0.4s ease-out forwards;
+  }
+  
+  /* Glass Effect */
+  .ark-glass {
+    @apply backdrop-blur-xl bg-white/80 border border-white/20;
+  }
+  
+  /* Text Gradient */
+  .ark-text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--ark-blue)) 0%, hsl(var(--ark-green)) 100%);
+  }
+}
+
+@layer utilities {
+  /* Custom Scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Focus Ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[hsl(var(--ark-blue))];
+  }
+}
+
+/* Keyframe Animations */
+@keyframes arkFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes arkSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arkScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

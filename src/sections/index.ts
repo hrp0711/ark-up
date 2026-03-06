@@ -1,0 +1,12 @@
+export { HeroSection } from './HeroSection';
+export { ProblemSolutionSection } from './ProblemSolutionSection';
+export { HowItWorksSection } from './HowItWorksSection';
+export { CoursesSection } from './CoursesSection';
+export { SavingsSimulatorSection } from './SavingsSimulatorSection';
+export { QuizSection } from './QuizSection';
+export { TestimonialsSection } from './TestimonialsSection';
+export { ProductsSection } from './ProductsSection';
+export { SchoolsSection } from './SchoolsSection';
+export { FreeResourceSection } from './FreeResourceSection';
+export { FAQSection } from './FAQSection';
+export { FinalCTASection } from './FinalCTASection';
