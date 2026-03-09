@@ -84,7 +84,7 @@ export function Navbar() {
 
   const scrollToSection = (href: string) => {
     setIsOpen(false);
-    
+
     // Handle hash links for same-page navigation
     if (href.startsWith('#') || href.includes('#')) {
       const hashIndex = href.indexOf('#');
@@ -98,32 +98,27 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHidden ? '-translate-y-full' : 'translate-y-0'
-      } ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isHidden ? '-translate-y-full' : 'translate-y-0'
+        } ${isScrolled
           ? 'bg-white/95 backdrop-blur-xl shadow-soft'
           : 'bg-transparent'
-      }`}
+        }`}
       role="banner"
     >
       <nav className="ark-container" role="navigation" aria-label="Navegación principal">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="flex items-center gap-2 group"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             aria-label="Ark-Up - Inicio"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-ark-blue to-ark-purple flex items-center justify-center transform group-hover:scale-105 transition-transform">
-              <BookOpen className="w-5 h-5 text-white" aria-hidden="true" />
-            </div>
-            <span className={`font-heading font-bold text-xl transition-colors ${
-              isScrolled ? 'text-ark-navy' : 'text-ark-navy'
-            }`}>
-              Ark-Up
-            </span>
+            <img
+              src="/logo.png"
+              alt="ArkUp Logo"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -133,11 +128,10 @@ export function Navbar() {
                 <DropdownMenu key={item.label}>
                   <DropdownMenuTrigger asChild>
                     <button
-                      className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                        isScrolled
+                      className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isScrolled
                           ? 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
                           : 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
-                      }`}
+                        }`}
                     >
                       {item.label}
                       <ChevronDown className="w-4 h-4" />
@@ -166,11 +160,10 @@ export function Navbar() {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isScrolled
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isScrolled
                       ? 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
                       : 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
-                  }`}
+                    }`}
                   aria-current={location.pathname === item.href ? 'page' : undefined}
                 >
                   {item.label}
@@ -225,12 +218,11 @@ export function Navbar() {
                 {/* Mobile Header */}
                 <div className="flex items-center justify-between p-4 border-b">
                   <Link to="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)} aria-label="Ark-Up - Inicio">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-ark-blue to-ark-purple flex items-center justify-center">
-                      <BookOpen className="w-5 h-5 text-white" aria-hidden="true" />
-                    </div>
-                    <span className="font-heading font-bold text-xl text-ark-navy">
-                      Ark-Up
-                    </span>
+                    <img
+                      src="/logo.png"
+                      alt="ArkUp Logo"
+                      className="h-10 w-auto"
+                    />
                   </Link>
                   <SheetClose asChild>
                     <Button variant="ghost" size="icon" aria-label="Cerrar menú">
