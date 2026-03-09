@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, GraduationCap, BookOpen, ShoppingBag, Building2, Users, HelpCircle, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown, GraduationCap, ShoppingBag, Building2, Users, HelpCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -129,8 +129,8 @@ export function Navbar() {
                   <DropdownMenuTrigger asChild>
                     <button
                       className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isScrolled
-                          ? 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
-                          : 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
+                        ? 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
+                        : 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
                         }`}
                     >
                       {item.label}
@@ -161,8 +161,8 @@ export function Navbar() {
                   key={item.label}
                   to={item.href}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isScrolled
-                      ? 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
-                      : 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
+                    ? 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
+                    : 'text-gray-700 hover:text-ark-blue hover:bg-ark-blue/5'
                     }`}
                   aria-current={location.pathname === item.href ? 'page' : undefined}
                 >
